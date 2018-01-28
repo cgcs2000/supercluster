@@ -2,6 +2,8 @@
 
 var kdbush = require('kdbush');
 
+var projection = 'EPSG:3857';
+
 module.exports = supercluster;
 module.exports.default = supercluster;
 
@@ -12,6 +14,12 @@ function supercluster(options) {
 function SuperCluster(options) {
     this.options = extend(Object.create(this.options), options);
     this.trees = new Array(this.options.maxZoom + 1);
+
+    if (['EPSG:3857', 'EPSG:4490'].indexOf(this.options.projection) === -1) {
+        throw new Error('Projection only supports EPSG:3857 or EPSG:4490.');
+    }
+
+    projection = this.options.projection;
 }
 
 SuperCluster.prototype = {
@@ -22,6 +30,8 @@ SuperCluster.prototype = {
         extent: 512,  // tile extent (radius is calculated relative to it)
         nodeSize: 64, // size of the KD-tree leaf node, affects performance
         log: false,   // whether to log timing info
+
+        projection: 'EPSG:3857', // projection of the clustered tiles, EPSG:3857 or EPSG:4490
 
         // a reduce function for calculating custom cluster properties
         reduce: null, // function (accumulated, props) { accumulated.sum += props.sum; }
@@ -332,9 +342,15 @@ function lngX(lng) {
     return lng / 360 + 0.5;
 }
 function latY(lat) {
-    var sin = Math.sin(lat * Math.PI / 180),
-        y = (0.5 - 0.25 * Math.log((1 + sin) / (1 - sin)) / Math.PI);
-    return y < 0 ? 0 : y > 1 ? 1 : y;
+    if (projection === 'EPSG:4490') {
+        var Y = 0.25 - (lat / 360);
+        return Y < 0 ? 0 : Y > 0.5 ? 0.5 : Y;
+    } else {
+        // EPSG:3857
+        var sin = Math.sin(lat * Math.PI / 180),
+            y = (0.5 - 0.25 * Math.log((1 + sin) / (1 - sin)) / Math.PI);
+        return y < 0 ? 0 : y > 1 ? 1 : y;
+    }
 }
 
 // spherical mercator to longitude/latitude
@@ -342,8 +358,13 @@ function xLng(x) {
     return (x - 0.5) * 360;
 }
 function yLat(y) {
-    var y2 = (180 - y * 360) * Math.PI / 180;
-    return 360 * Math.atan(Math.exp(y2)) / Math.PI - 90;
+    if (projection === 'EPSG:4490') {
+        return 90 - y * 360;
+    } else {
+        // EPSG:3857
+        var y2 = (180 - y * 360) * Math.PI / 180;
+        return 360 * Math.atan(Math.exp(y2)) / Math.PI - 90;
+    }
 }
 
 function extend(dest, src) {
