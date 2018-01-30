@@ -15,8 +15,8 @@ function SuperCluster(options) {
     this.options = extend(Object.create(this.options), options);
     this.trees = new Array(this.options.maxZoom + 1);
 
-    if (['EPSG:3857', 'EPSG:4490'].indexOf(this.options.projection) === -1) {
-        throw new Error('Projection only supports EPSG:3857 or EPSG:4490.');
+    if (['EPSG:3857', 'EPSG:4326'].indexOf(this.options.projection) === -1) {
+        throw new Error('Projection only supports EPSG:3857 or EPSG:4326.');
     }
 
     projection = this.options.projection;
@@ -31,7 +31,7 @@ SuperCluster.prototype = {
         nodeSize: 64, // size of the KD-tree leaf node, affects performance
         log: false,   // whether to log timing info
 
-        projection: 'EPSG:3857', // projection of the clustered tiles, EPSG:3857 or EPSG:4490
+        projection: 'EPSG:3857', // projection of the clustered tiles, EPSG:3857 or EPSG:4326
 
         // a reduce function for calculating custom cluster properties
         reduce: null, // function (accumulated, props) { accumulated.sum += props.sum; }
@@ -342,7 +342,7 @@ function lngX(lng) {
     return lng / 360 + 0.5;
 }
 function latY(lat) {
-    if (projection === 'EPSG:4490') {
+    if (projection === 'EPSG:4326') {
         var Y = 0.25 - (lat / 360);
         return Y < 0 ? 0 : Y > 0.5 ? 0.5 : Y;
     } else {
@@ -358,7 +358,7 @@ function xLng(x) {
     return (x - 0.5) * 360;
 }
 function yLat(y) {
-    if (projection === 'EPSG:4490') {
+    if (projection === 'EPSG:4326') {
         return 90 - y * 360;
     } else {
         // EPSG:3857
