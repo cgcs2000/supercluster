@@ -5,6 +5,8 @@ var kdbush = require('kdbush');
 module.exports = supercluster;
 module.exports.default = supercluster;
 
+var projection = 'EPSG:3857';
+
 function supercluster(options) {
     return new SuperCluster(options);
 }
