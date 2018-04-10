@@ -29,7 +29,7 @@ SuperCluster.prototype = {
         nodeSize: 64, // size of the KD-tree leaf node, affects performance
         log: false,   // whether to log timing info
 
-        projection: 'EPSG:3857', // projection of the clustered tiles, EPSG:3857 or EPSG:4326
+        projection: 'EPSG:3857', // projection of the clustered tiles, EPSG:3857 or EPSG:4490
 
         // a reduce function for calculating custom cluster properties
         reduce: null, // function (accumulated, props) { accumulated.sum += props.sum; }
