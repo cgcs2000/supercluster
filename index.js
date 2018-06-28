@@ -1,25 +1,21 @@
-'use strict';
 
-var kdbush = require('kdbush');
-
-module.exports = supercluster;
-module.exports.default = supercluster;
+import kdbush from 'kdbush';
 
 var projection = 'EPSG:3857';
 
-function supercluster(options) {
+export default function supercluster(options) {
+    projection = options && options.projection || projection;
+
+    if (['EPSG:3857', 'EPSG:4490'].indexOf(projection) === -1) {
+        throw new Error('Projection only supports EPSG:3857 or EPSG:4490.');
+    }
+
     return new SuperCluster(options);
 }
 
 function SuperCluster(options) {
     this.options = extend(Object.create(this.options), options);
     this.trees = new Array(this.options.maxZoom + 1);
-
-    if (['EPSG:3857', 'EPSG:4490'].indexOf(this.options.projection) === -1) {
-        throw new Error('Projection only supports EPSG:3857 or EPSG:4490.');
-    }
-
-    projection = this.options.projection;
 }
 
 SuperCluster.prototype = {
@@ -30,8 +26,6 @@ SuperCluster.prototype = {
         extent: 512,  // tile extent (radius is calculated relative to it)
         nodeSize: 64, // size of the KD-tree leaf node, affects performance
         log: false,   // whether to log timing info
-
-        projection: 'EPSG:3857', // projection of the clustered tiles, EPSG:3857 or EPSG:4490
 
         // a reduce function for calculating custom cluster properties
         reduce: null, // function (accumulated, props) { accumulated.sum += props.sum; }
@@ -83,14 +77,22 @@ SuperCluster.prototype = {
     },
 
     getClusters: function (bbox, zoom) {
-        if (bbox[0] > bbox[2]) {
-            var easternHem = this.getClusters([bbox[0], bbox[1], 180, bbox[3]], zoom);
-            var westernHem = this.getClusters([-180, bbox[1], bbox[2], bbox[3]], zoom);
+        var minLng = ((bbox[0] + 180) % 360 + 360) % 360 - 180;
+        var minLat = Math.max(-90, Math.min(90, bbox[1]));
+        var maxLng = bbox[2] === 180 ? 180 : ((bbox[2] + 180) % 360 + 360) % 360 - 180;
+        var maxLat = Math.max(-90, Math.min(90, bbox[3]));
+
+        if (bbox[2] - bbox[0] >= 360) {
+            minLng = -180;
+            maxLng = 180;
+        } else if (minLng > maxLng) {
+            var easternHem = this.getClusters([minLng, minLat, 180, maxLat], zoom);
+            var westernHem = this.getClusters([-180, minLat, maxLng, maxLat], zoom);
             return easternHem.concat(westernHem);
         }
 
         var tree = this.trees[this._limitZoom(zoom)];
-        var ids = tree.range(lngX(bbox[0]), latY(bbox[3]), lngX(bbox[2]), latY(bbox[1]));
+        var ids = tree.range(lngX(minLng), latY(maxLat), lngX(maxLng), latY(minLat));
         var clusters = [];
         for (var i = 0; i < ids.length; i++) {
             var c = tree.points[ids[i]];
@@ -345,12 +347,12 @@ function latY(lat) {
     if (projection === 'EPSG:4490') {
         var Y = 0.25 - (lat / 360);
         return Y < 0 ? 0 : Y > 0.5 ? 0.5 : Y;
-    } else {
-        // EPSG:3857
-        var sin = Math.sin(lat * Math.PI / 180),
-            y = (0.5 - 0.25 * Math.log((1 + sin) / (1 - sin)) / Math.PI);
-        return y < 0 ? 0 : y > 1 ? 1 : y;
     }
+
+    // EPSG:3857
+    var sin = Math.sin(lat * Math.PI / 180),
+        y = (0.5 - 0.25 * Math.log((1 + sin) / (1 - sin)) / Math.PI);
+    return y < 0 ? 0 : y > 1 ? 1 : y;
 }
 
 // spherical mercator to longitude/latitude
@@ -360,11 +362,11 @@ function xLng(x) {
 function yLat(y) {
     if (projection === 'EPSG:4490') {
         return 90 - y * 360;
-    } else {
-        // EPSG:3857
-        var y2 = (180 - y * 360) * Math.PI / 180;
-        return 360 * Math.atan(Math.exp(y2)) / Math.PI - 90;
     }
+
+    // EPSG:3857
+    var y2 = (180 - y * 360) * Math.PI / 180;
+    return 360 * Math.atan(Math.exp(y2)) / Math.PI - 90;
 }
 
 function extend(dest, src) {

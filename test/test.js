@@ -1,8 +1,8 @@
-'use strict';
 
-var test = require('tap').test;
-var supercluster = require('../');
+import tap from 'tap';
+import supercluster from '../index.js';
 
+var test = tap.test;
 var places = require('./fixtures/places.json');
 var placesTile = require('./fixtures/places-z0-0-0.json');
 
@@ -116,3 +116,16 @@ test('returns clusters when query crosses international dateline', function (t) 
 
     t.end();
 });
+
+test('does not crash on weird bbox values', function (t) {
+    var index = supercluster().load(places.features);
+    t.equal(index.getClusters([129.426390, -103.720017, -445.930843, 114.518236], 1).length, 26);
+    t.equal(index.getClusters([112.207836, -84.578666, -463.149397, 120.169159], 1).length, 27);
+    t.equal(index.getClusters([129.886277, -82.332680, -445.470956, 120.390930], 1).length, 26);
+    t.equal(index.getClusters([458.220043, -84.239039, -117.137190, 120.206585], 1).length, 25);
+    t.equal(index.getClusters([456.713058, -80.354196, -118.644175, 120.539148], 1).length, 25);
+    t.equal(index.getClusters([453.105328, -75.857422, -122.251904, 120.732760], 1).length, 25);
+    t.equal(index.getClusters([-180, -90, 180, 90], 1).length, 61);
+    t.end();
+});
+
