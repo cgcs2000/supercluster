@@ -342,9 +342,8 @@ function lngX(lng) {
     return lng / 360 + 0.5;
 }
 function latY(lat) {
-    var sin = Math.sin(lat * Math.PI / 180),
-        y = (0.5 - 0.25 * Math.log((1 + sin) / (1 - sin)) / Math.PI);
-    return y < 0 ? 0 : y > 1 ? 1 : y;
+    var y = 0.25 - (lat / 360);
+    return y < 0 ? 0 : y > 0.5 ? 0.5 : y;
 }
 
 // spherical mercator to longitude/latitude
@@ -352,8 +351,7 @@ function xLng(x) {
     return (x - 0.5) * 360;
 }
 function yLat(y) {
-    var y2 = (180 - y * 360) * Math.PI / 180;
-    return 360 * Math.atan(Math.exp(y2)) / Math.PI - 90;
+    return 90 - y * 360;
 }
 
 function extend(dest, src) {

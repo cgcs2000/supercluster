@@ -1,5 +1,7 @@
 # supercluster [![Simply Awesome](https://img.shields.io/badge/simply-awesome-brightgreen.svg)](https://github.com/mourner/projects) [![Build Status](https://travis-ci.org/mapbox/supercluster.svg?branch=master)](https://travis-ci.org/mapbox/supercluster)
 
+> This repository is a fork of `mapbox/supercluster`, but for CGCS2000 projection.
+
 A very fast JavaScript library for geospatial point clustering for browsers and Node.
 
 ```html
