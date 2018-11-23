@@ -1,15 +1,15 @@
-/*global importScripts supercluster */
+/*global importScripts Supercluster */
 
 importScripts('../dist/supercluster.js');
 
-var now = Date.now();
+const now = Date.now();
 
-var index;
+let index;
 
-getJSON('../test/fixtures/places.json', function (geojson) {
-    console.log('loaded ' + geojson.length + ' points JSON in ' + ((Date.now() - now) / 1000) + 's');
+getJSON('../test/fixtures/places.json', (geojson) => {
+    console.log(`loaded ${  geojson.length  } points JSON in ${  (Date.now() - now) / 1000  }s`);
 
-    index = supercluster({
+    index = new Supercluster({
         log: true,
         radius: 60,
         extent: 256,
@@ -33,7 +33,7 @@ self.onmessage = function (e) {
 };
 
 function getJSON(url, callback) {
-    var xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.responseType = 'json';
     xhr.setRequestHeader('Accept', 'application/json');
