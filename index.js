@@ -12,9 +12,6 @@ const defaultOptions = {
     // a reduce function for calculating custom cluster properties
     reduce: null, // (accumulated, props) => { accumulated.sum += props.sum; }
 
-    // initial properties of a cluster (before running the reducer)
-    initial: () => ({}), // () => ({sum: 0})
-
     // properties to use for individual points when running the reducer
     map: props => props // props => ({sum: props.my_value})
 };
@@ -217,7 +214,7 @@ export default class Supercluster {
 
     _cluster(points, zoom) {
         const clusters = [];
-        const {radius, extent, reduce, initial} = this.options;
+        const {radius, extent, reduce} = this.options;
         const r = radius / (extent * Math.pow(2, zoom));
 
         // loop through each point
@@ -235,12 +232,7 @@ export default class Supercluster {
             let wx = p.x * numPoints;
             let wy = p.y * numPoints;
 
-            let clusterProperties = null;
-
-            if (reduce) {
-                clusterProperties = initial();
-                this._accumulate(clusterProperties, p);
-            }
+            const clusterProperties = reduce ? this._map(p) : null;
 
             // encode both zoom and point index on which the cluster originated
             const id = (i << 5) + (zoom + 1);
@@ -259,7 +251,7 @@ export default class Supercluster {
                 b.parentId = id;
 
                 if (reduce) {
-                    this._accumulate(clusterProperties, b);
+                    reduce(clusterProperties, this._map(b));
                 }
             }
 
@@ -274,10 +266,8 @@ export default class Supercluster {
         return clusters;
     }
 
-    _accumulate(clusterProperties, point) {
-        const {map, reduce} = this.options;
-        const properties = point.numPoints ? point.properties : map(this.points[point.index].properties);
-        reduce(clusterProperties, properties);
+    _map(point) {
+        return point.numPoints ? point.properties : this.options.map(this.points[point.index].properties);
     }
 }
 

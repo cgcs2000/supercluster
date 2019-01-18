@@ -75,7 +75,6 @@ test('returns cluster expansion zoom for maxZoom', (t) => {
 
 test('aggregates cluster properties with reduce', (t) => {
     const index = new Supercluster({
-        initial: () => ({sum: 0}),
         map: props => ({sum: props.scalerank}),
         reduce: (a, b) => { a.sum += b.sum; }
     }).load(places.features);
