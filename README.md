@@ -1,4 +1,4 @@
-# supercluster [![Simply Awesome](https://img.shields.io/badge/simply-awesome-brightgreen.svg)](https://github.com/mourner/projects) [![Build Status](https://travis-ci.org/mapbox/supercluster.svg?branch=master)](https://travis-ci.org/mapbox/supercluster)
+# supercluster [![Simply Awesome](https://img.shields.io/badge/simply-awesome-brightgreen.svg)](https://github.com/mourner/projects) [![Build Status](https://travis-ci.org/cgcs2000/supercluster.svg?branch=cgcs2000)](https://travis-ci.org/cgcs2000/supercluster)
 
 > This repository is a fork of `mapbox/supercluster`, but for CGCS2000 projection.
 
