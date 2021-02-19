@@ -1,0 +1,716 @@
+{
+  "features": [
+    {
+      "type": 1,
+      "geometry": [[148, 79]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 164,
+        "point_count": 17,
+        "point_count_abbreviated": 17
+      },
+      "id": 164
+    },
+    {
+      "type": 1,
+      "geometry": [[167, 113]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 196,
+        "point_count": 19,
+        "point_count_abbreviated": 19
+      },
+      "id": 196
+    },
+    {
+      "type": 1,
+      "geometry": [[177, 176]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 228,
+        "point_count": 15,
+        "point_count_abbreviated": 15
+      },
+      "id": 228
+    },
+    {
+      "type": 1,
+      "geometry": [[329, 117]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 260,
+        "point_count": 10,
+        "point_count_abbreviated": 10
+      },
+      "id": 260
+    },
+    {
+      "type": 1,
+      "geometry": [[296, 162]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 388,
+        "point_count": 11,
+        "point_count_abbreviated": 11
+      },
+      "id": 388
+    },
+    {
+      "type": 1,
+      "geometry": [[90, 233]],
+      "tags": {
+        "scalerank": 3,
+        "name": "Wright I.",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": -50.959168,
+        "long_x": -72.995002,
+        "region": "Antarctica",
+        "subregion": null,
+        "featureclass": "island"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[80, 197]],
+      "tags": {
+        "scalerank": 3,
+        "name": "Oceanic pole of inaccessibility",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": -48.865032,
+        "long_x": -123.401986,
+        "region": "Seven seas (open ocean)",
+        "subregion": "South Pacific Ocean",
+        "featureclass": "pole"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[74, 234]],
+      "tags": {
+        "scalerank": 3,
+        "name": "Dean I.",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": -50.959168,
+        "long_x": -72.995002,
+        "region": "Antarctica",
+        "subregion": null,
+        "featureclass": "island"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[69, 234]],
+      "tags": {
+        "scalerank": 3,
+        "name": "Grant I.",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": -50.959168,
+        "long_x": -72.995002,
+        "region": "Antarctica",
+        "subregion": null,
+        "featureclass": "island"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[49, 236]],
+      "tags": {
+        "scalerank": 3,
+        "name": "Newman I.",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": -50.959168,
+        "long_x": -72.995002,
+        "region": "Antarctica",
+        "subregion": null,
+        "featureclass": "island"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[92, 86]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 580,
+        "point_count": 6,
+        "point_count_abbreviated": 6
+      },
+      "id": 580
+    },
+    {
+      "type": 1,
+      "geometry": [[160, 207]],
+      "tags": {
+        "scalerank": 3,
+        "name": "Cabo de Hornos",
+        "comment": null,
+        "name_alt": "Cape Horn",
+        "lat_y": -55.862824,
+        "long_x": -67.169425,
+        "region": "South America",
+        "subregion": null,
+        "featureclass": "cape"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[242, 109]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 1028,
+        "point_count": 5,
+        "point_count_abbreviated": 5
+      },
+      "id": 1028
+    },
+    {
+      "type": 1,
+      "geometry": [[259, 71]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 1156,
+        "point_count": 6,
+        "point_count_abbreviated": 6
+      },
+      "id": 1156
+    },
+    {
+      "type": 1,
+      "geometry": [[458, 189]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 1220,
+        "point_count": 6,
+        "point_count_abbreviated": 6
+      },
+      "id": 1220
+    },
+    {
+      "type": 1,
+      "geometry": [[93, 10]],
+      "tags": {
+        "scalerank": 3,
+        "name": "North Magnetic Pole 2005 (est)",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": -48.865032,
+        "long_x": -123.401986,
+        "region": "Seven seas (open ocean)",
+        "subregion": "Arctic Ocean",
+        "featureclass": "pole"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[238, 45]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Rockall",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 58.163524,
+        "long_x": -12.408715,
+        "region": "Seven seas (open ocean)",
+        "subregion": "North Atlantic Ocean",
+        "featureclass": "island"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[225, 28]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Cape Brewster",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 70.150754,
+        "long_x": -22.122616,
+        "region": "North America",
+        "subregion": "Greenland",
+        "featureclass": "cape"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[227, 38]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Surtsey",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 63.217764,
+        "long_x": -20.434929,
+        "region": "Europe",
+        "subregion": "Iceland",
+        "featureclass": "island"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[230, 33]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Grmsey",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 66.669359,
+        "long_x": -18.251096,
+        "region": "Europe",
+        "subregion": "Iceland",
+        "featureclass": "island"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[159, 20]],
+      "tags": {
+        "scalerank": 4,
+        "name": "Cape York",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 76.218919,
+        "long_x": -68.218612,
+        "region": "North America",
+        "subregion": "Greenland",
+        "featureclass": "cape"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[194, 43]],
+      "tags": {
+        "scalerank": 4,
+        "name": "Nunap Isua",
+        "comment": null,
+        "name_alt": "Cape Farewell",
+        "lat_y": 59.862583,
+        "long_x": -43.90088,
+        "region": "North America",
+        "subregion": "Greenland",
+        "featureclass": "cape"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[210, 9]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Cape Morris Jesup",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 83.626331,
+        "long_x": -32.491541,
+        "region": "North America",
+        "subregion": "Greenland",
+        "featureclass": "cape"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[27, 142]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 1572,
+        "point_count": 6,
+        "point_count_abbreviated": 6
+      },
+      "id": 1572
+    },
+    {
+      "type": 1,
+      "geometry": [[100, 167]],
+      "tags": {
+        "scalerank": 4,
+        "name": "I. de Pascua",
+        "comment": null,
+        "name_alt": "Easter I.",
+        "lat_y": -27.102117,
+        "long_x": -109.367953,
+        "region": "Oceania",
+        "subregion": "Polynesia",
+        "featureclass": "island"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[401, 99]],
+      "tags": {
+        "scalerank": 4,
+        "name": "Plain of Jars",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 20.550709,
+        "long_x": 101.890532,
+        "region": "Asia",
+        "subregion": null,
+        "featureclass": "plain"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[371, 120]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Dondra Head",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 5.947528,
+        "long_x": 80.616321,
+        "region": "Asia",
+        "subregion": null,
+        "featureclass": "cape"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[19, 31]],
+      "tags": {
+        "scalerank": 4,
+        "name": "Cape Hope",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 68.35638,
+        "long_x": -166.815582,
+        "region": "North America",
+        "subregion": null,
+        "featureclass": "cape"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[33, 26]],
+      "tags": {
+        "scalerank": 4,
+        "name": "Point Barrow",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 71.372637,
+        "long_x": -156.615894,
+        "region": "North America",
+        "subregion": null,
+        "featureclass": "cape"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[471, 154]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 2052,
+        "point_count": 8,
+        "point_count_abbreviated": 8
+      },
+      "id": 2052
+    },
+    {
+      "type": 1,
+      "geometry": [[424, 167]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 2276,
+        "point_count": 6,
+        "point_count_abbreviated": 6
+      },
+      "id": 2276
+    },
+    {
+      "type": 1,
+      "geometry": [[483, 104]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 2468,
+        "point_count": 14,
+        "point_count_abbreviated": 14
+      },
+      "id": 2468
+    },
+    {
+      "type": 1,
+      "geometry": [[505, 130]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Tabiteuea",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": -1.201405,
+        "long_x": 174.755207,
+        "region": "Oceania",
+        "subregion": "Micronesia",
+        "featureclass": "island"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[511, 140]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Funafuti",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": -8.491577,
+        "long_x": 179.19841,
+        "region": "Oceania",
+        "subregion": "Polynesia",
+        "featureclass": "island"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[503, 128]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Aranuka",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 0.226766,
+        "long_x": 173.626286,
+        "region": "Oceania",
+        "subregion": "Micronesia",
+        "featureclass": "island"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[493, 129]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Nauru",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": -0.505856,
+        "long_x": 166.930778,
+        "region": "Oceania",
+        "subregion": "Micronesia",
+        "featureclass": "island"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[473, 47]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 3012,
+        "point_count": 6,
+        "point_count_abbreviated": 6
+      },
+      "id": 3012
+    },
+    {
+      "type": 1,
+      "geometry": [[498, 43]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Cape Olyutorskiy",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 59.960807,
+        "long_x": 170.31265,
+        "region": "Asia",
+        "subregion": null,
+        "featureclass": "cape"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[511, 39]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Cape Navarin",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 62.327239,
+        "long_x": 179.074225,
+        "region": "Asia",
+        "subregion": null,
+        "featureclass": "cape"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[292, 27]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Nordkapp",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 71.18337,
+        "long_x": 25.662398,
+        "region": "Europe",
+        "subregion": null,
+        "featureclass": "cape"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[205, 135]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Cabo de São Roque",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": -5.193476,
+        "long_x": -35.447654,
+        "region": "South America",
+        "subregion": null,
+        "featureclass": "cape"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[-29, 104]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 2468,
+        "point_count": 14,
+        "point_count_abbreviated": 14
+      },
+      "id": 2468
+    },
+    {
+      "type": 1,
+      "geometry": [[-7, 130]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Tabiteuea",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": -1.201405,
+        "long_x": 174.755207,
+        "region": "Oceania",
+        "subregion": "Micronesia",
+        "featureclass": "island"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[-1, 140]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Funafuti",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": -8.491577,
+        "long_x": 179.19841,
+        "region": "Oceania",
+        "subregion": "Polynesia",
+        "featureclass": "island"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[-9, 128]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Aranuka",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 0.226766,
+        "long_x": 173.626286,
+        "region": "Oceania",
+        "subregion": "Micronesia",
+        "featureclass": "island"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[-19, 129]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Nauru",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": -0.505856,
+        "long_x": 166.930778,
+        "region": "Oceania",
+        "subregion": "Micronesia",
+        "featureclass": "island"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[-39, 47]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 3012,
+        "point_count": 6,
+        "point_count_abbreviated": 6
+      },
+      "id": 3012
+    },
+    {
+      "type": 1,
+      "geometry": [[-14, 43]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Cape Olyutorskiy",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 59.960807,
+        "long_x": 170.31265,
+        "region": "Asia",
+        "subregion": null,
+        "featureclass": "cape"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[-1, 39]],
+      "tags": {
+        "scalerank": 5,
+        "name": "Cape Navarin",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 62.327239,
+        "long_x": 179.074225,
+        "region": "Asia",
+        "subregion": null,
+        "featureclass": "cape"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[539, 142]],
+      "tags": {
+        "cluster": true,
+        "cluster_id": 1572,
+        "point_count": 6,
+        "point_count_abbreviated": 6
+      },
+      "id": 1572
+    },
+    {
+      "type": 1,
+      "geometry": [[531, 31]],
+      "tags": {
+        "scalerank": 4,
+        "name": "Cape Hope",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 68.35638,
+        "long_x": -166.815582,
+        "region": "North America",
+        "subregion": null,
+        "featureclass": "cape"
+      }
+    },
+    {
+      "type": 1,
+      "geometry": [[545, 26]],
+      "tags": {
+        "scalerank": 4,
+        "name": "Point Barrow",
+        "comment": null,
+        "name_alt": null,
+        "lat_y": 71.372637,
+        "long_x": -156.615894,
+        "region": "North America",
+        "subregion": null,
+        "featureclass": "cape"
+      }
+    }
+  ]
+}

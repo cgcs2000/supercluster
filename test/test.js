@@ -4,11 +4,19 @@ import Supercluster from '../index.js';
 
 const places = require('./fixtures/places.json');
 const placesTile = require('./fixtures/places-z0-0-0.json');
+const placesTileMin5 = require('./fixtures/places-z0-0-0-min5.json');
 
 test('generates clusters properly', (t) => {
     const index = new Supercluster().load(places.features);
     const tile = index.getTile(0, 0, 0);
     t.same(tile.features, placesTile.features);
+    t.end();
+});
+
+test('supports minPoints option', (t) => {
+    const index = new Supercluster({minPoints: 5}).load(places.features);
+    const tile = index.getTile(0, 0, 0);
+    t.same(tile.features, placesTileMin5.features);
     t.end();
 });
 
@@ -34,6 +42,13 @@ test('returns leaves of a cluster', (t) => {
         'Cape Churchill',
         'Cape Bauld'
     ]);
+    t.end();
+});
+
+test('generates unique ids with generateId option', (t) => {
+    const index = new Supercluster({generateId: true}).load(places.features);
+    const ids = index.getTile(0, 0, 0).features.filter(f => !f.tags.cluster).map(f => f.id);
+    t.same(ids, [22, 24, 28, 30, 118, 125, 118]);
     t.end();
 });
 
