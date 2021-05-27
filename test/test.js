@@ -161,8 +161,7 @@ test('makes sure same-location points are clustered', (t) => {
     const index = new Supercluster({
         maxZoom: 20,
         extent: 8192,
-        radius: 16,
-        log: true
+        radius: 16
     }).load([
         {type: 'Feature', geometry: {type: 'Point', coordinates: [-1.426798, 53.943034]}},
         {type: 'Feature', geometry: {type: 'Point', coordinates: [-1.426798, 53.943034]}}
@@ -172,3 +171,13 @@ test('makes sure same-location points are clustered', (t) => {
 
     t.end();
 });
+
+// test('makes sure unclustered point coords are not rounded', (t) => {
+//     const index = new Supercluster({maxZoom: 19}).load([
+//         {type: 'Feature', geometry: {type: 'Point', coordinates: [173.19150559062456, -41.340357424709275]}}
+//     ]);
+
+//     t.same(index.getTile(20, 1028744, 656754).features[0].geometry[0], [421, 281]);
+
+//     t.end();
+// });
